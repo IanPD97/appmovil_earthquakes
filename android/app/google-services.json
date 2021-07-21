@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1055885362601",
+    "project_id": "earthquakesapp-ee179",
+    "storage_bucket": "earthquakesapp-ee179.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055885362601:android:ef943e93c9a7d09bb530b8",
+        "android_client_info": {
+          "package_name": "com.example.appmovil_earthquakes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055885362601-23knpb57nhj952hu5aj3hk75a7sa0d70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnyq9REQTMCo9WACZuzS7NqTAabnHUnGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055885362601-23knpb57nhj952hu5aj3hk75a7sa0d70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
