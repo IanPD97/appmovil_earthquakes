@@ -23,6 +23,8 @@ class _DevsPageState extends State<DevsPage> {
                 ListTile(
                   leading: Icon(Icons.sentiment_very_dissatisfied_outlined),
                   title: Text("Nicolás Ipinza"),
+                  subtitle: Text(
+                      "Estudiante de ingeniería civil en computación UTEM, Computación paralela y distribuida"),
                 ),
               ])),
             ]),
@@ -32,6 +34,8 @@ class _DevsPageState extends State<DevsPage> {
                 ListTile(
                   leading: Icon(Icons.sentiment_very_dissatisfied_outlined),
                   title: Text("Ian Poveda"),
+                  subtitle: Text(
+                      "Estudiante de ingeniería civil en computación UTEM, Computación paralela y distribuida"),
                 ),
               ]))
             ]),

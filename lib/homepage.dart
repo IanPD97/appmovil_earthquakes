@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
               IconButton(
                 onPressed: getReportes,
                 icon: Icon(Icons.refresh_sharp),
-                iconSize: 40.0,
+                iconSize: 25.0,
               )
             ]),
         body: ListView.builder(
@@ -46,7 +46,8 @@ class _HomePageState extends State<HomePage> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   ListTile(
-                    leading: Icon(Icons.radar),
+                    leading: Icon(Icons.radar,
+                        color: Colors.teal.shade700, size: 32.0),
                     title: Container(
                         child: Column(
                       children: <Widget>[

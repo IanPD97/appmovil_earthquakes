@@ -11,42 +11,53 @@ class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome to earthquakes-app'),
+          backgroundColor: Colors.teal.shade700,
+        ),
         body: Container(
             child: Column(
-      children: [
-        Row(children: [
-          Expanded(
-              child: Column(children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.developer_mode),
-              title: Text("Ver Desarrolladores"),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DevsPage(),
-                    ));
-              },
+          children: [
+            Row(children: [
+              Expanded(
+                  child: Column(children: <Widget>[
+                ListTile(
+                  leading: Icon(Icons.sensors_rounded),
+                  title: Text("Ver registros de Sismos"),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomePage(),
+                        ));
+                  },
+                ),
+              ]))
+            ]),
+            const Divider(
+              height: 20,
+              thickness: 1.5,
+              indent: 10,
+              endIndent: 10,
+              color: Colors.teal,
             ),
-          ]))
-        ]),
-        Row(children: [
-          Expanded(
-              child: Column(children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.sensors_rounded),
-              title: Text("Ver registros de Sismos"),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomePage(),
-                    ));
-              },
-            ),
-          ]))
-        ]),
-      ],
-    )));
+            Row(children: [
+              Expanded(
+                  child: Column(children: <Widget>[
+                ListTile(
+                  leading: Icon(Icons.developer_mode),
+                  title: Text("Ver Desarrolladores"),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DevsPage(),
+                        ));
+                  },
+                ),
+              ]))
+            ]),
+          ],
+        )));
   }
 }
