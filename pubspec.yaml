@@ -33,7 +33,11 @@ dependencies:
   firebase_auth: ^3.0.1
   flutter_signin_button: ^2.0.0
   get: ^4.1.4
-
+  dio: ^4.0.0
+  flutter_polyline_points: ^0.2.6
+  google_maps_flutter: ^2.0.6
+  google_maps_flutter_web: ^0.3.0+3
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
