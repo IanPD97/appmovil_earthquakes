@@ -24,8 +24,8 @@ class _DevsPageState extends State<DevsPage> {
                   leading: ClipRRect(
                     child: Image.asset(
                       'assets/ipinza.jpg',
-                      width: 50,
-                      height: 50,
+                      width: 60,
+                      height: 60,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(1000)),
                   ),
@@ -43,6 +43,8 @@ class _DevsPageState extends State<DevsPage> {
                   leading: ClipRRect(
                     child: Image.asset(
                       'assets/poveda.jpg',
+                      height: 60,
+                      width: 60,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(1000)),
                   ),

@@ -1,6 +1,8 @@
 import 'package:appmovil_earthquakes/homepage.dart';
 import 'package:appmovil_earthquakes/devs_page.dart';
 import 'package:flutter/material.dart';
+import 'package:appmovil_earthquakes/google_signin_api.dart';
+import 'package:appmovil_earthquakes/sign_up_page.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -52,6 +54,30 @@ class _FirstPageState extends State<FirstPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => DevsPage(),
+                        ));
+                  },
+                ),
+              ]))
+            ]),
+            const Divider(
+              height: 20,
+              thickness: 1.5,
+              indent: 10,
+              endIndent: 10,
+              color: Colors.blueGrey,
+            ),
+            Row(children: [
+              Expanded(
+                  child: Column(children: <Widget>[
+                ListTile(
+                  leading: Icon(Icons.logout),
+                  title: Text("Cerrar Sesión"),
+                  onTap: () {
+                    GoogleSignInApi.logOut();
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignUpPage(),
                         ));
                   },
                 ),
