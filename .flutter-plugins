@@ -1,10 +1,6 @@
 # This is a generated file; do not edit or check into version control.
-firebase_auth=/home/ian/.pub-cache/hosted/pub.dartlang.org/firebase_auth-3.0.1/
-firebase_auth_web=/home/ian/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-3.0.0/
-firebase_core=/home/ian/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.4.0/
-firebase_core_web=/home/ian/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.1.0/
 flutter_plugin_android_lifecycle=/home/ian/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.2/
 google_maps_flutter=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.0.6/
 google_maps_flutter_web=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_web-0.3.0+3/
-google_sign_in=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_sign_in-5.0.4/
+google_sign_in=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_sign_in-5.0.5/
 google_sign_in_web=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.10.0/
