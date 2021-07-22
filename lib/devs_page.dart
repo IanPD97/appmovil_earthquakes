@@ -11,8 +11,8 @@ class _DevsPageState extends State<DevsPage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Desarrolladores'),
-          backgroundColor: Colors.teal.shade700,
-          centerTitle: true,
+          backgroundColor: Colors.blueGrey,
+          centerTitle: false,
         ),
         body: Container(
             child: Column(
@@ -21,10 +21,18 @@ class _DevsPageState extends State<DevsPage> {
               Expanded(
                   child: Column(children: <Widget>[
                 ListTile(
-                  leading: Icon(Icons.sentiment_very_dissatisfied_outlined),
+                  leading: ClipRRect(
+                    child: Image.asset(
+                      'assets/ipinza.jpg',
+                      width: 50,
+                      height: 50,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(1000)),
+                  ),
                   title: Text("Nicolás Ipinza"),
                   subtitle: Text(
-                      "Estudiante de ingeniería civil en computación UTEM, Computación paralela y distribuida"),
+                      "Estudiante de ingeniería civil en computación UTEM   Computación Paralela y Distribuida"),
+                  trailing: Text('Grupo-W'),
                 ),
               ])),
             ]),
@@ -32,10 +40,16 @@ class _DevsPageState extends State<DevsPage> {
               Expanded(
                   child: Column(children: <Widget>[
                 ListTile(
-                  leading: Icon(Icons.sentiment_very_dissatisfied_outlined),
+                  leading: ClipRRect(
+                    child: Image.asset(
+                      'assets/poveda.jpg',
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(1000)),
+                  ),
                   title: Text("Ian Poveda"),
                   subtitle: Text(
-                      "Estudiante de ingeniería civil en computación UTEM, Computación paralela y distribuida"),
+                      "Estudiante de ingeniería civil en computación UTEM   Computación Paralela y Distribuida"),
+                  trailing: Text('Grupo-W'),
                 ),
               ]))
             ]),

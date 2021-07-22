@@ -15,7 +15,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.teal.shade700,
+        backgroundColor: Colors.blueGrey,
         body: Container(
             child: _isLoggedIn
                 ? Column(children: [
@@ -33,8 +33,16 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: Text("Cerrar Sesión"))
                   ])
                 : Center(
-                    child: ElevatedButton(
-                    child: Text('Iniciar sesión con Google'),
+                    child: OutlinedButton(
+                    child: Text(
+                      'Iniciar sesión con Google',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                    ),
+                    style: OutlinedButton.styleFrom(
+                        primary: Colors.black,
+                        backgroundColor: Colors.white,
+                        minimumSize: Size(70, 70),
+                        fixedSize: Size(320, 50)),
                     onPressed: () {
                       _googleSignIn.signIn().then((userData) {
                         setState(() {

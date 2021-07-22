@@ -12,8 +12,8 @@ class _FirstPageState extends State<FirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to earthquakes-app'),
-          backgroundColor: Colors.teal.shade700,
+          title: Text('Registros de Sismología'),
+          backgroundColor: Colors.blueGrey,
         ),
         body: Container(
             child: Column(
@@ -39,7 +39,7 @@ class _FirstPageState extends State<FirstPage> {
               thickness: 1.5,
               indent: 10,
               endIndent: 10,
-              color: Colors.teal,
+              color: Colors.blueGrey,
             ),
             Row(children: [
               Expanded(

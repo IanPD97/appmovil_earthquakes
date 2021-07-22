@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
             title: Text('Lista de Sismos'),
-            backgroundColor: Colors.teal.shade700,
+            backgroundColor: Colors.blueGrey,
             actions: [
               IconButton(
                 onPressed: getReportes,
@@ -46,8 +46,8 @@ class _HomePageState extends State<HomePage> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   ListTile(
-                    leading: Icon(Icons.radar,
-                        color: Colors.teal.shade700, size: 32.0),
+                    leading:
+                        Icon(Icons.radar, color: Colors.blueGrey, size: 32.0),
                     title: Container(
                         child: Column(
                       children: <Widget>[
