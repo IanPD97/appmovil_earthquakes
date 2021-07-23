@@ -1,10 +1,10 @@
 # This is a generated file; do not edit or check into version control.
-flutter_plugin_android_lifecycle=/home/ian/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.2/
-google_maps_flutter=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.0.6/
-google_maps_flutter_web=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_web-0.3.0+3/
-google_sign_in=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_sign_in-5.0.5/
-google_sign_in_web=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.10.0/
-path_provider=/home/ian/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.2/
-path_provider_linux=/home/ian/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.0.0/
-path_provider_macos=/home/ian/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.0/
-path_provider_windows=/home/ian/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.1/
+flutter_plugin_android_lifecycle=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_plugin_android_lifecycle-2.0.2\\
+google_maps_flutter=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_maps_flutter-2.0.6\\
+google_maps_flutter_web=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_maps_flutter_web-0.3.0+3\\
+google_sign_in=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_sign_in-5.0.5\\
+google_sign_in_web=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_sign_in_web-0.10.0\\
+path_provider=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider-2.0.2\\
+path_provider_linux=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_linux-2.0.0\\
+path_provider_macos=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_macos-2.0.0\\
+path_provider_windows=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_windows-2.0.1\\

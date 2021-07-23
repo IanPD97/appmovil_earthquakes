@@ -70,7 +70,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: OutlinedButton.styleFrom(
                         primary: Colors.black,
                         backgroundColor: Colors.white,
-                        //minimumSize: Size(double.infinity, 55),
                         fixedSize: Size(350, 55)),
                     onPressed: () {
                       _googleSignIn.signIn().then((userData) {
@@ -84,10 +83,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               for (int j = i; j < largo; j++) {
                                 String aux = _userObj!.email[j];
                                 dominio = dominio + aux;
-                                //print(dominio);
                               }
-                              print(dominio);
-
                               if (dominio == '@utem.cl') {
                                 Navigator.of(context).pushReplacement(
                                     MaterialPageRoute(
@@ -105,16 +101,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     },
                   ))));
   }
-
-  // Future signIn() async {
-  //   final user = await GoogleSignInApi.login();
-
-  //   if (user == null) {
-  //     ScaffoldMessenger.of(context)
-  //         .showSnackBar(SnackBar(content: Text("Sign in Failed")));
-  //   } else {
-  //     Navigator.of(context).pushReplacement(
-  //         MaterialPageRoute(builder: (context) => FirstPage()));
 }
 
 class _SignInWith extends StatelessWidget {
@@ -128,10 +114,6 @@ class _SignInWith extends StatelessWidget {
     return Container(
         height: 55,
         width: double.infinity,
-        //decoration: BoxDecoration(
-        //borderRadius: BorderRadius.circular(8.0),
-        //border: Border.all(color: Colors.black)
-        //),
         child: Row(
           children: [
             SizedBox(width: 15),

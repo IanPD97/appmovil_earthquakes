@@ -21,61 +21,61 @@ class DetailPage extends StatelessWidget {
               Row(children: [
                 Expanded(
                     child: Text('Fecha y hora del Sismo:',
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.start)),
                 Expanded(
                     child: Text("${sismosData[index]["id"]}",
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.right)),
               ]),
               Row(children: [
                 Expanded(
                     child: Text('Latitud:',
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.start)),
                 Expanded(
                     child: Text("${sismosData[index]["latitud"]}",
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.right)),
               ]),
               Row(children: [
                 Expanded(
                     child: Text('Longitud:',
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.start)),
                 Expanded(
                     child: Text("${sismosData[index]["longitud"]}",
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.right)),
               ]),
               Row(children: [
                 Expanded(
                     child: Text('Profundidad:',
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.start)),
                 Expanded(
                     child: Text("${sismosData[index]["profundidad"]}",
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.right)),
               ]),
               Row(children: [
                 Expanded(
                     child: Text('Magnitud:',
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.start)),
                 Expanded(
                     child: Text("${sismosData[index]["magnitud"]}",
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.right)),
               ]),
               Row(children: [
                 Expanded(
                     child: Text('Referencia geográfica:',
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.start)),
                 Expanded(
                     child: Text("${sismosData[index]["referencia_geografica"]}",
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                         textAlign: TextAlign.right)),
               ]),
               const Divider(
