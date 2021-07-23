@@ -1,6 +1,7 @@
 import 'package:appmovil_earthquakes/firstpage.dart';
 import 'package:flutter/material.dart';
 import 'package:appmovil_earthquakes/sign_up_page.dart';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 
 void main() async {
   runApp(
@@ -10,4 +11,33 @@ void main() async {
       debugShowCheckedModeBanner: false,
     ),
   );
+}
+
+// When pressing the back-button, a message will be printed to the console,
+// and no back action will happen.
+
+//void main() => runApp(MaterialApp(home: Demo()));
+
+class Demo extends StatefulWidget {
+  @override
+  DemoState createState() => DemoState();
+}
+
+class DemoState extends State<Demo> {
+  //
+
+  @override
+  Widget build(BuildContext context) {
+    //
+    return Scaffold(
+      appBar: AppBar(title: const Text('Back Button Interceptor Example')),
+      body: Container(
+        color: Colors.green,
+        child: const Center(
+          child: Text('Click the Back Button\n'
+              'and see the message in the console.'),
+        ),
+      ),
+    );
+  }
 }

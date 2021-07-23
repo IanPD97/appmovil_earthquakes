@@ -3,6 +3,7 @@ import 'package:appmovil_earthquakes/devs_page.dart';
 import 'package:flutter/material.dart';
 import 'package:appmovil_earthquakes/google_signin_api.dart';
 import 'package:appmovil_earthquakes/sign_up_page.dart';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -11,9 +12,27 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> {
   @override
+  void initState() {
+    super.initState();
+    BackButtonInterceptor.add(myInterceptor);
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
+  }
+
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    print("BACK BUTTON!"); // Do some stuff.
+    return true;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text('Registros de Sismología'),
           backgroundColor: Colors.blueGrey,
         ),

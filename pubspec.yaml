@@ -36,6 +36,8 @@ dependencies:
   flutter_polyline_points: ^0.2.6
   google_maps_flutter: ^2.0.6
   google_maps_flutter_web: ^0.3.0+3
+  back_button_interceptor: ^5.0.1
+  google_fonts: ^2.1.0
   
 dev_dependencies:
   flutter_test:
@@ -56,6 +58,7 @@ flutter:
   assets:
    - assets/ipinza.jpg
    - assets/poveda.jpg
+   - assets/google.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

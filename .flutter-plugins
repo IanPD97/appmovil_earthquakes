@@ -4,3 +4,7 @@ google_maps_flutter=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_maps_flu
 google_maps_flutter_web=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_web-0.3.0+3/
 google_sign_in=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_sign_in-5.0.5/
 google_sign_in_web=/home/ian/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.10.0/
+path_provider=/home/ian/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.2/
+path_provider_linux=/home/ian/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.0.0/
+path_provider_macos=/home/ian/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.0/
+path_provider_windows=/home/ian/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.1/

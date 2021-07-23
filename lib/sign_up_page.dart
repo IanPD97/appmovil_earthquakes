@@ -1,6 +1,8 @@
 import 'package:appmovil_earthquakes/firstpage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/material.dart';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -11,6 +13,22 @@ class _SignUpPageState extends State<SignUpPage> {
   bool _isLoggedIn = false;
   GoogleSignInAccount? _userObj;
   GoogleSignIn _googleSignIn = GoogleSignIn();
+  @override
+  void initState() {
+    super.initState();
+    BackButtonInterceptor.add(myInterceptor);
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
+  }
+
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    print("BACK BUTTON!"); // Do some stuff.
+    return true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,39 +36,68 @@ class _SignUpPageState extends State<SignUpPage> {
         backgroundColor: Colors.blueGrey,
         body: Container(
             child: _isLoggedIn
-                ? Column(children: [
-                    Image.network(_userObj!.photoUrl!),
-                    Text(_userObj!.displayName!),
+                ? Center(
+                    child: Column(children: [
+                    Center(
+                        child: Icon(Icons.sentiment_dissatisfied_rounded,
+                            color: Colors.black, size: 300)),
                     Text(_userObj!.email),
-                    TextButton(
-                        onPressed: () {
-                          _googleSignIn.signOut().then((value) {
-                            setState(() {
-                              _isLoggedIn = false;
-                            });
-                          }).catchError((e) {});
-                        },
-                        child: Text("Cerrar Sesión"))
-                  ])
+                    Text(_userObj!.displayName!),
+                    Text(_userObj!.displayName! +
+                        ', lo sentimos: Sólo los usuarios con correo @utem.cl tienen acceso a esta aplicación.'),
+                    OutlinedButton(
+                      onPressed: () {
+                        _googleSignIn.signOut().then((value) {
+                          setState(() {
+                            _isLoggedIn = false;
+                          });
+                        }).catchError((e) {});
+                      },
+                      child: Text("Cerrar Sesión",
+                          style: TextStyle(color: Colors.black, fontSize: 20)),
+                      style: OutlinedButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Colors.white,
+                          minimumSize: Size(double.infinity, 55),
+                          fixedSize: Size(double.infinity, 55)),
+                    ),
+                  ]))
                 : Center(
                     child: OutlinedButton(
-                    child: Text(
-                      'Iniciar sesión con Google',
-                      style: TextStyle(color: Colors.black, fontSize: 20),
-                    ),
+                    child: Column(children: [
+                      _SignInWith(text: 'Google', icon: 'google')
+                    ]),
                     style: OutlinedButton.styleFrom(
                         primary: Colors.black,
                         backgroundColor: Colors.white,
-                        minimumSize: Size(70, 70),
-                        fixedSize: Size(320, 50)),
+                        //minimumSize: Size(double.infinity, 55),
+                        fixedSize: Size(350, 55)),
                     onPressed: () {
                       _googleSignIn.signIn().then((userData) {
                         setState(() {
-                          _isLoggedIn = true;
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (context) => FirstPage()));
                           _userObj = userData!;
+                          int largo = _userObj!.email.length;
+                          String dominio = '';
+                          for (int i = 0; i < largo; i++) {
+                            String letra = _userObj!.email[i];
+                            if (letra == '@') {
+                              for (int j = i; j < largo; j++) {
+                                String aux = _userObj!.email[j];
+                                dominio = dominio + aux;
+                                //print(dominio);
+                              }
+                              print(dominio);
+
+                              if (dominio == '@utem.cl') {
+                                Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                        builder: (context) => FirstPage()));
+                              } else {
+                                _isLoggedIn = true;
+                                _googleSignIn.signOut();
+                              }
+                            }
+                          }
                         });
                       }).catchError((e) {
                         print(e);
@@ -68,4 +115,41 @@ class _SignUpPageState extends State<SignUpPage> {
   //   } else {
   //     Navigator.of(context).pushReplacement(
   //         MaterialPageRoute(builder: (context) => FirstPage()));
+}
+
+class _SignInWith extends StatelessWidget {
+  final String? text;
+  final String? icon;
+
+  const _SignInWith({this.text, this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 55,
+        width: double.infinity,
+        //decoration: BoxDecoration(
+        //borderRadius: BorderRadius.circular(8.0),
+        //border: Border.all(color: Colors.black)
+        //),
+        child: Row(
+          children: [
+            SizedBox(width: 15),
+            Image.asset(
+              'assets/$icon.png',
+              width: 55,
+              alignment: Alignment.centerRight,
+            ),
+            SizedBox(width: 20),
+            Text(
+              'Iniciar sesión con $text',
+              style: GoogleFonts.getFont('Inter',
+                  color: Color(0xff757999),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
+              textAlign: TextAlign.start,
+            ),
+          ],
+        ));
+  }
 }

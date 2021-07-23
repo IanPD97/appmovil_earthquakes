@@ -31,7 +31,8 @@ class _DevsPageState extends State<DevsPage> {
                   ),
                   title: Text("Nicolás Ipinza"),
                   subtitle: Text(
-                      "Estudiante de ingeniería civil en computación UTEM   Computación Paralela y Distribuida"),
+                      "Estudiante de ingeniería civil en computación UTEM"
+                      "\nComputación Paralela y Distribuida"),
                   trailing: Text('Grupo-W'),
                 ),
               ])),
@@ -50,7 +51,8 @@ class _DevsPageState extends State<DevsPage> {
                   ),
                   title: Text("Ian Poveda"),
                   subtitle: Text(
-                      "Estudiante de ingeniería civil en computación UTEM   Computación Paralela y Distribuida"),
+                      "Estudiante de ingeniería civil en computación UTEM"
+                      '\nComputación Paralela y Distribuida'),
                   trailing: Text('Grupo-W'),
                 ),
               ]))
