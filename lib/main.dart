@@ -13,10 +13,7 @@ void main() async {
   );
 }
 
-// When pressing the back-button, a message will be printed to the console,
-// and no back action will happen.
 
-//void main() => runApp(MaterialApp(home: Demo()));
 
 class Demo extends StatefulWidget {
   @override
