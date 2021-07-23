@@ -1,16 +1,21 @@
 import 'package:appmovil_earthquakes/homepage.dart';
 import 'package:appmovil_earthquakes/devs_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:appmovil_earthquakes/google_signin_api.dart';
 import 'package:appmovil_earthquakes/sign_up_page.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
 
 class FirstPage extends StatefulWidget {
+  final String? _userObj;
+  FirstPage(this._userObj);
   @override
-  _FirstPageState createState() => _FirstPageState();
+  _FirstPageState createState() => _FirstPageState(this._userObj);
 }
 
 class _FirstPageState extends State<FirstPage> {
+  final dynamic _userObj;
+  _FirstPageState(this._userObj);
   @override
   void initState() {
     super.initState();
@@ -34,7 +39,7 @@ class _FirstPageState extends State<FirstPage> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Text('Registros de Sismología'),
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Color.fromARGB(200, 115,147,179),
         ),
         body: Container(
             child: Column(
@@ -48,7 +53,7 @@ class _FirstPageState extends State<FirstPage> {
                   onTap: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
+                        CupertinoPageRoute(
                           builder: (context) => HomePage(),
                         ));
                   },
@@ -60,7 +65,7 @@ class _FirstPageState extends State<FirstPage> {
               thickness: 1.5,
               indent: 10,
               endIndent: 10,
-              color: Colors.blueGrey,
+              color: Color.fromARGB(200, 115,147,179),
             ),
             Row(children: [
               Expanded(
@@ -71,7 +76,7 @@ class _FirstPageState extends State<FirstPage> {
                   onTap: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
+                        CupertinoPageRoute(
                           builder: (context) => DevsPage(),
                         ));
                   },
@@ -83,7 +88,7 @@ class _FirstPageState extends State<FirstPage> {
               thickness: 1.5,
               indent: 10,
               endIndent: 10,
-              color: Colors.blueGrey,
+              color: Color.fromARGB(200, 115,147,179),
             ),
             Row(children: [
               Expanded(
@@ -95,13 +100,18 @@ class _FirstPageState extends State<FirstPage> {
                     GoogleSignInApi.logOut();
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
+                        CupertinoPageRoute(
                           builder: (context) => SignUpPage(),
                         ));
                   },
                 ),
               ]))
             ]),
+            SizedBox(height: 300),
+            Text('Sesión iniciada como: '+_userObj,style: TextStyle(
+              color: Colors.blueGrey.shade400,
+              fontSize: 13,
+            ),),
           ],
         )));
   }

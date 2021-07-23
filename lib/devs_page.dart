@@ -11,7 +11,7 @@ class _DevsPageState extends State<DevsPage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Desarrolladores'),
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Color.fromARGB(200, 115,147,179),
           centerTitle: false,
         ),
         body: Container(

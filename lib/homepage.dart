@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -30,7 +31,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
             title: Text('Lista de Sismos'),
-            backgroundColor: Colors.blueGrey,
+            backgroundColor: Color.fromARGB(200, 115,147,179),
             actions: [
               IconButton(
                 onPressed: getReportes,
@@ -47,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   ListTile(
                     leading:
-                        Icon(Icons.radar, color: Colors.blueGrey, size: 32.0),
+                        Icon(Icons.radar, color: Color.fromARGB(200, 115,147,179), size: 32.0),
                     title: Container(
                         child: Column(
                       children: <Widget>[
@@ -69,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                     onTap: () {
                       Navigator.push(
                           context,
-                          MaterialPageRoute(
+                          CupertinoPageRoute(
                             builder: (context) => DetailPage(sismosData, index),
                           ));
                     },

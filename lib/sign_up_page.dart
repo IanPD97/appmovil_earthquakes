@@ -1,4 +1,5 @@
 import 'package:appmovil_earthquakes/firstpage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
@@ -36,70 +37,236 @@ class _SignUpPageState extends State<SignUpPage> {
         backgroundColor: Colors.blueGrey,
         body: Container(
             child: _isLoggedIn
-                ? Center(
-                    child: Column(children: [
-                    Center(
-                        child: Icon(Icons.sentiment_dissatisfied_rounded,
-                            color: Colors.black, size: 300)),
-                    Text(_userObj!.email),
-                    Text(_userObj!.displayName!),
-                    Text(_userObj!.displayName! +
-                        ', lo sentimos: Sólo los usuarios con correo @utem.cl tienen acceso a esta aplicación.'),
-                    OutlinedButton(
-                      onPressed: () {
-                        _googleSignIn.signOut().then((value) {
-                          setState(() {
-                            _isLoggedIn = false;
-                          });
-                        }).catchError((e) {});
-                      },
-                      child: Text("Cerrar Sesión",
-                          style: TextStyle(color: Colors.black, fontSize: 20)),
-                      style: OutlinedButton.styleFrom(
-                          primary: Colors.black,
-                          backgroundColor: Colors.white,
-                          minimumSize: Size(double.infinity, 55),
-                          fixedSize: Size(double.infinity, 55)),
-                    ),
-                  ]))
+                ? Center(child: Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/background_v2.png'),
+                      fit: BoxFit.cover,
+
+                    )
+                ),
+                child: Scaffold(
+                    backgroundColor: Colors.transparent,
+                    body: ListView(
+                        children: [
+                          SizedBox(height: 50),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset('assets/logo.png',width:120),
+                            ],
+                          ),
+                          SizedBox(height:20),
+                          Padding(
+                            padding: EdgeInsets.all(30),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 10,
+                                    offset: Offset(0,5)
+                                )
+                                ],
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    child: Text('APP DE SISMOLOGIA', style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25,
+                                      color: Colors.blueGrey,
+                                    )),
+                                  ),
+                                  Image.asset('assets/logo-utem.png',width: 50 ,),
+                                  SizedBox(height: 10),
+                                  Text(_userObj!.displayName! +', lo sentimos, sólo se puede acceder mediante credenciales UTEM',textAlign: TextAlign.center,style: TextStyle(
+                                    color: Colors.red.shade300,
+                                    fontSize: 16,
+                                  ),),
+                                  SizedBox(height: 10),
+
+                                  //SizedBox(height: 10),
+                                  InkWell(
+                                      onTap: (){
+                                        _googleSignIn.signOut().then((value) {
+                                          setState(() {
+                                            _isLoggedIn = false;
+                                          });
+                                        }).catchError((e) {});
+                                      },
+                                      child: Container(
+                                        child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                  padding: EdgeInsets.all(20),
+                                                  child: Text('Cerrar sesión',style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.blueGrey,
+                                                  ))
+                                              )
+                                            ]
+                                        ),
+                                        decoration: BoxDecoration(
+                                            color: Color.fromARGB(130, 115,147,179),
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(20),
+                                              bottomRight: Radius.circular(20),
+                                            )
+                                        ),
+                                      )
+                                  ),
+
+                                ],
+
+                              ),
+                            ),
+
+                          ),
+                          SizedBox(height:137),
+                          Text('Sesión iniciada como: ' + _userObj!.email,textAlign: TextAlign.center,style: TextStyle(
+                            color: Colors.blueGrey.shade200,
+                            fontSize: 13,
+                          ),),
+                          Text('Desarrollado por UTEM Estudiantes',textAlign: TextAlign.center,style: TextStyle(
+                            color: Colors.blueGrey.shade200,
+                            fontSize: 16,
+                          ),),
+
+                        ]
+                    )
+                )
+            )
+
+
+            )
                 : Center(
-                    child: OutlinedButton(
-                    child: Column(children: [
-                      _SignInWith(text: 'Google', icon: 'google')
-                    ]),
-                    style: OutlinedButton.styleFrom(
-                        primary: Colors.black,
-                        backgroundColor: Colors.white,
-                        fixedSize: Size(350, 55)),
-                    onPressed: () {
-                      _googleSignIn.signIn().then((userData) {
-                        setState(() {
-                          _userObj = userData!;
-                          int largo = _userObj!.email.length;
-                          String dominio = '';
-                          for (int i = 0; i < largo; i++) {
-                            String letra = _userObj!.email[i];
-                            if (letra == '@') {
-                              for (int j = i; j < largo; j++) {
-                                String aux = _userObj!.email[j];
-                                dominio = dominio + aux;
-                              }
-                              if (dominio == '@utem.cl') {
-                                Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(
-                                        builder: (context) => FirstPage()));
-                              } else {
-                                _isLoggedIn = true;
-                                _googleSignIn.signOut();
-                              }
-                            }
-                          }
-                        });
-                      }).catchError((e) {
-                        print(e);
-                      });
-                    },
-                  ))));
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/background_v2.png'),
+                    fit: BoxFit.cover,
+
+                  )
+                ),
+                child: Scaffold(
+                  backgroundColor: Colors.transparent,
+                  body: ListView(
+                    children: [
+                      SizedBox(height: 50),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset('assets/logo.png',width:120),
+                        ],
+                      ),
+                      SizedBox(height:20),
+                      Padding(
+                        padding: EdgeInsets.all(30),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              offset: Offset(0,5)
+                            )
+                          ],
+                        ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                child: Text('APP DE SISMOLOGIA', style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 25,
+                                  color: Colors.blueGrey,
+                                )),
+                              ),
+                              Image.asset('assets/logo-utem.png',width: 50 ,),
+
+                              SizedBox(height: 10),
+
+                              //SizedBox(height: 10),
+                              InkWell(
+                                onTap: (){
+                                  _googleSignIn.signIn().then((userData) {
+                                    setState(() {
+                                      _userObj = userData!;
+                                      int largo = _userObj!.email.length;
+                                      String dominio = '';
+                                      for (int i = 0; i < largo; i++) {
+                                        String letra = _userObj!.email[i];
+                                        if (letra == '@') {
+                                          for (int j = i; j < largo; j++) {
+                                            String aux = _userObj!.email[j];
+                                            dominio = dominio + aux;
+                                          }
+                                          if (dominio == '@utem.cl') {
+                                            Navigator.of(context).pushReplacement(
+                                                CupertinoPageRoute(
+                                                    builder: (context) => FirstPage(_userObj?.email)));
+                                          } else {
+                                            _isLoggedIn = true;
+                                            _googleSignIn.signOut();
+                                          }
+                                        }
+                                      }
+                                    });
+                                  }).catchError((e) {
+                                    print(e);
+                                  });
+                                },
+                                child: Container(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.all(20),
+                                        child: Text('Iniciar sesión con Google',style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.blueGrey,
+                                        ))
+                                      )
+                                    ]
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: Color.fromARGB(130, 115,147,179),
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20),
+                                    )
+                                  ),
+                                )
+                              ),
+
+                            ],
+
+                          ),
+                        ),
+
+                      ),
+                      SizedBox(height:200),
+                      Text('Desarrollado por UTEM Estudiantes',textAlign: TextAlign.center,style: TextStyle(
+                        color: Colors.blueGrey.shade200,
+                        fontSize: 16,
+                      ),),
+                    ]
+                  )
+                )
+              )
+
+            )
+        )
+    );
   }
 }
 
@@ -135,3 +302,66 @@ class _SignInWith extends StatelessWidget {
         ));
   }
 }
+/*child: OutlinedButton(
+child: Column(children: [
+_SignInWith(text: 'Google', icon: 'google')
+]),
+style: OutlinedButton.styleFrom(
+primary: Colors.black,
+backgroundColor: Colors.white,
+fixedSize: Size(350, 55)),
+onPressed: () {
+_googleSignIn.signIn().then((userData) {
+setState(() {
+_userObj = userData!;
+int largo = _userObj!.email.length;
+String dominio = '';
+for (int i = 0; i < largo; i++) {
+String letra = _userObj!.email[i];
+if (letra == '@') {
+for (int j = i; j < largo; j++) {
+String aux = _userObj!.email[j];
+dominio = dominio + aux;
+}
+if (dominio == '@utem.cl') {
+Navigator.of(context).pushReplacement(
+MaterialPageRoute(
+builder: (context) => FirstPage()));
+} else {
+_isLoggedIn = true;
+_googleSignIn.signOut();
+}
+}
+}
+});
+}).catchError((e) {
+print(e);
+});
+},
+)*/
+
+/*child: Column(children: [
+Center(
+child: Icon(Icons.sentiment_dissatisfied_rounded,
+color: Colors.black, size: 300)),
+Text(_userObj!.email),
+Text(_userObj!.displayName!),
+Text(_userObj!.displayName! +
+', lo sentimos: Sólo los usuarios con correo @utem.cl tienen acceso a esta aplicación.'),
+OutlinedButton(
+onPressed: () {
+_googleSignIn.signOut().then((value) {
+setState(() {
+_isLoggedIn = false;
+});
+}).catchError((e) {});
+},
+child: Text("Cerrar Sesión",
+style: TextStyle(color: Colors.black, fontSize: 20)),
+style: OutlinedButton.styleFrom(
+primary: Colors.black,
+backgroundColor: Colors.white,
+minimumSize: Size(double.infinity, 55),
+fixedSize: Size(double.infinity, 55)),
+),
+])*/

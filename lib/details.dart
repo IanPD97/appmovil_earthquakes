@@ -12,7 +12,7 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Detalles del Sismo'),
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Color.fromARGB(200, 115,147,179),
         ),
         body: Container(
             margin: EdgeInsets.all(25),
@@ -83,7 +83,7 @@ class DetailPage extends StatelessWidget {
                 thickness: 3,
                 indent: 1,
                 endIndent: 1,
-                color: Colors.blueGrey,
+                color: Color.fromARGB(200, 115,147,179),
               ),
               Column(
                 mainAxisSize: MainAxisSize.min,

@@ -35,7 +35,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Ubicación del Sismo'),
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Color.fromARGB(200, 115,147,179),
         ),
         body: GoogleMap(
             onMapCreated: _onMapCreated,
