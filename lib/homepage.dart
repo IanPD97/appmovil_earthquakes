@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   dynamic sismosData = [];
   getReportes() async {
     http.Response response = await http
-        .get(Uri.parse('http://192.168.1.82:3000/grupo-w/earthquakes/'));
+        .get(Uri.parse('http://api.jkd.cl:18091/grupo-w/earthquakes'));
     data = json.decode(response.body);
     setState(() {
       sismosData = data['Sismos'];
