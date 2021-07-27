@@ -40,7 +40,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ? Center(child: Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/background_v2.png'),
+                      image: AssetImage('assets/background_v4.png'),
                       fit: BoxFit.cover,
 
                     )
@@ -53,7 +53,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.asset('assets/logo.png',width:120),
+                              Image.asset('assets/logo_v2.png',width:120),
                             ],
                           ),
                           SizedBox(height:20),
@@ -130,11 +130,11 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           SizedBox(height:137),
                           Text('Sesión iniciada como: ' + _userObj!.email,textAlign: TextAlign.center,style: TextStyle(
-                            color: Colors.blueGrey.shade200,
+                            color: Colors.blueGrey.shade400,
                             fontSize: 13,
                           ),),
                           Text('Desarrollado por UTEM Estudiantes',textAlign: TextAlign.center,style: TextStyle(
-                            color: Colors.blueGrey.shade200,
+                            color: Colors.blueGrey.shade400,
                             fontSize: 16,
                           ),),
 
@@ -149,7 +149,7 @@ class _SignUpPageState extends State<SignUpPage> {
               child: Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/background_v2.png'),
+                    image: AssetImage('assets/background_v4.png'),
                     fit: BoxFit.cover,
 
                   )
@@ -162,7 +162,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset('assets/logo.png',width:120),
+                          Image.asset('assets/logo_v2.png',width:120),
                         ],
                       ),
                       SizedBox(height:20),
@@ -256,7 +256,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       SizedBox(height:200),
                       Text('Desarrollado por UTEM Estudiantes',textAlign: TextAlign.center,style: TextStyle(
-                        color: Colors.blueGrey.shade200,
+                        color: Colors.blueGrey.shade400,
                         fontSize: 16,
                       ),),
                     ]
