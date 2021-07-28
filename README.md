@@ -44,6 +44,7 @@ _3. Ejecutar el proyecto_
   _Luego se debe seleccionar una maquina virtual (si no existe, se debe crear) de android, y se debe ejecutar el proyecto con el icono de "play" en Android Studio_
   _Con esto, se iniciará la aplicación en la máquina virtual, y se podrá acceder a ella._
 
+  _Otra forma de ejecutar este proyecto, es descargando el archivo app-release.apk en un móvil con sistema operativo android, instalándolo e iniciándolo._
 
 ## Construido con 🛠️
 
