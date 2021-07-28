@@ -1,17 +1,56 @@
 # appmovil_earthquakes
+_Aplicación móvil que cuenta con un login, en el cual sólo se puede acceder mediante credenciales UTEM, esta aplicación captura los datos de la API_REST desarrollada anteriormente, los lista, y muestra su ubicación en el mapa, usando la API de Google Maps._
 
-A new Flutter project.
+### Pre-requisitos 📋
 
-## Getting Started
+```
+Android Studio
+Flutter
+Servidor REST desarrollado anteriormente
+Opcional: VSCode
+```
 
-This project is a starting point for a Flutter application.
+### Instalación 🔧
 
-A few resources to get you started if this is your first Flutter project:
+_1. Clonar el repositorio del proyecto_
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+  _Se puede descargar directamente desde GitHub o clonar el repositorio_
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+git clone https://github.com/IanPD97/appmovil_earthquakes.git
+```
 
+_2. Iniciar el servidor REST_
+
+  _En una terminal, se debe realizar la conexión mediante SSH con el siguiente comando_
+
+```
+ssh -p 22 grupo-w@api.jkd.cl
+```
+  _Posteriormente se debe ingresar el siguiente password_
+  
+```
+4AuXJAjd
+```
+  _Con esto se generará una conexión remota mediante SSH, Posteriormente en la máquina virtual, se debe escribir el siguiente comando_
+```
+node ./backend/APIRESTPARALELAS2021/index.js
+```
+  _Con esto iniciará el servidor REST_
+  
+_3. Ejecutar el proyecto_
+
+  _Para ejecutar el proyecto, se debe iniciar Android Studio, seleccionar la opción de New Flutter Project, y seleccionar la ubicación el proyecto clonado anteriormente_
+  _Luego se debe seleccionar una maquina virtual (si no existe, se debe crear) de android, y se debe ejecutar el proyecto con el icono de "play" en Android Studio_
+  _Con esto, se iniciará la aplicación en la máquina virtual, y se podrá acceder a ella._
+
+
+## Construido con 🛠️
+
+* [Flutter/Dart] - El lenguaje de programacion usado
+* [AndroidStudio] - Editor de texto utilizado
+
+## Autores ✒️
+
+* **Nicolas Ipinza** - [Viakure](https://github.com/Viakure)
+* **Ian Poveda** - [IanPD97](https://github.com/IanPD97)
