@@ -48,7 +48,7 @@ _3. Ejecutar el proyecto_
 ## Construido con 🛠️
 
 * [Flutter/Dart] - El lenguaje de programacion usado
-* [AndroidStudio] - Editor de texto utilizado
+* [AndroidStudio] - Software y editor de texto utilizado
 
 ## Autores ✒️
 
